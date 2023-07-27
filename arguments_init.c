@@ -3,6 +3,7 @@
 /**
  * arguments_init - this function Initializes a pointer to
  * struct bus_s.
+ * @arguments: arguments
  */
 void arguments_init()
 {
@@ -19,6 +20,6 @@ void arguments_init()
 	arguments->comment = NULL;
 	arguments->n_tokens = 0;
 	arguments->line_number = 0;
-	arguments->stack_length = 0;
+	arguments->stack_len = 0;
 	arguments->stack = 1;
 }
