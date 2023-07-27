@@ -11,7 +11,3 @@ void get_file_failed(char *filename)
 	free_arguments();
 	exit(EXIT_FAILURE);
 }
-
-
-
-

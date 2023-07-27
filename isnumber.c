@@ -3,22 +3,22 @@
 /**
  * is_num - Checks if a string represents a valid integer number.
  * @str: The string to check.
- * Return: 1 if the string is a valid number, 0 otherwise.
+ * Return: 1 if the string is a valid number, 0 otherwise. (successful)
  */
 int is_num(char *str)
 {
-	int i = 0;
+	int x = 0;
 
-	while (str[i])
+	while (str[x])
 	{
-		if (i == 0 && str[i] == '-' && str[i + 1])
+		if (x == 0 && str[x] == '-' && str[x + 1])
 		{
-			i++;
+			x++;
 			continue;
 		}
-		if (str[i] < '0' || str[i] > '9')
+		if (str[x] < '0' || str[x] > '9')
 			return (0);
-		i++;
+		x++;
 	}
 
 	return (1);
