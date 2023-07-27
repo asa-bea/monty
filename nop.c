@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * nop - does nothing
+ * nop - does absolutely nothing
  * @stack: Pointer to the stack.
  * @line_number: Line number where the nop function is called.
  */

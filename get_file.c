@@ -14,7 +14,7 @@ void get_file_failed(char *filename)
 
 
 /**
- * get_file - gets the stream for reading from  file.
+ * get_file - gets the stream for reading.
  * @fileName: Name of the file to open and set as the stream.
  */
 
