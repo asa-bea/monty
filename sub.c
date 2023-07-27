@@ -10,7 +10,7 @@ void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp1, *tmp2;
 
-	(void) stack;
+	UNUSED(stack);
 	if (arguments->stack_len < 2)
 	{
 		dprintf(2, "L%d: can't sub, stack too short\n", line_number);
@@ -19,7 +19,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	}
 
 	tmp1 = arguments->head;
-	tmp2 = tmp1->next;
+	tmp2 = arguments->head->next;
 
 	tmp2->n = tmp2->n - tmp1->n;
 	delete_stack_node();

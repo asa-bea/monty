@@ -1,12 +1,11 @@
 #include "monty.h"
 
 /**
- * to_tokenize_comment - Tokenizes the comments read from file.
- */
+  * set_n_tokens -
+  */
 
-void to_tokenize_comment(void)
+void set_n_tokens(void)
 {
-	int i = 0;
 	char *delims = " \n", *token = NULL, *linecpy = NULL;
 
 	linecpy = malloc(sizeof(char) * (strlen(arguments->comment) + 1));
@@ -18,9 +17,24 @@ void to_tokenize_comment(void)
 		arguments->n_tokens += 1;
 		token = strtok(NULL, delims);
 	}
+	free(linecpy);
 
+}
+/**
+ * to_tokenize_comment - Tokenizes the comments read from file.
+ */
+
+void to_tokenize_comment(void)
+{
+	int i = 0;
+	char *delims = " \n", *token = NULL, *linecpy = NULL;
+
+	set_n_tokens();
 	arguments->tokens = malloc(sizeof(char *) *
 			(arguments->n_tokens + 1));
+	linecpy = malloc(sizeof(char) * (strlen(arguments->comment) + 1));
+	strcpy(linecpy, arguments->comment);
+
 	strcpy(linecpy, arguments->comment);
 	token = strtok(linecpy, delims);
 	while (token)

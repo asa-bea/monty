@@ -8,9 +8,9 @@
 
 void arguments_validation(int argc)
 {
-	if (argc == 2)
-		return;
-
-	dprintf(2, "USAGE: monty file\n");
-	exit(EXIT_FAILURE);
+	if (argc != 2)
+	{
+		dprintf(2, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
 }

@@ -13,25 +13,5 @@ void get_file_failed(char *filename)
 }
 
 
-/**
- * get_file - gets the stream for reading from  file.
- * @fileName: Name of the file to open and set as the stream.
- */
-
-void get_file(char *fileName)
-{
-	int fd;
-
-	fd = open(fileName, O_RDONLY);
-	if (fd == -1)
-		get_file_failed(fileName);
-
-	arguments->file = fdopen(fd, "r");
-	if (arguments->file == NULL)
-	{
-		close(fd);
-		get_file_failed(fileName);
-	}
-}
 
 

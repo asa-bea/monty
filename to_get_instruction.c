@@ -33,7 +33,7 @@ void to_get_instruction(void)
 		{NULL, NULL}
 	};
 
-	if (arguments->n_tokens == 0) /* no instructions */
+	if (arguments->n_tokens == 0)
 		return;
 	if (arguments->tokens[0][0] == '#')
 	{
@@ -41,9 +41,10 @@ void to_get_instruction(void)
 		arguments->instruction->f = nop;
 		return;
 	}
-	for (; instructions[i].opcode != NULL; i++)
+
+	while (instructions[i].opcode != NULL)
 	{
-		/* compare opcode of instruction to first token (instruct..) */
+
 		if (strcmp(instructions[i].opcode, arguments->tokens[0])
 				== 0)
 		{
@@ -51,6 +52,7 @@ void to_get_instruction(void)
 			arguments->instruction->f = instructions[i].f;
 			return;
 		}
+		i++;
 	}
 	invalid_instruction();
 }
